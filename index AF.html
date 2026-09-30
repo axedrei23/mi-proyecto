@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Captura de Datos</title>
+</head>
+<body>
+
+  <h2>Captura de Datos</h2>
+
+  <form id="formulario" action="https://script.google.com/macros/s/AKfycbxiyNCywHwhezp5mMa4gRgdvSx_0XqdyGhwl38xmnFyZR5sBoLmCn6ALz_lOv4SCWo/exec" method="POST" target="hidden_iframe" onsubmit="enviado()">
+    <label for="nombre">Nombre:</label><br>
+    <input type="text" id="nombre" name="nombre" required><br><br>
+
+    <label for="edad">Edad:</label><br>
+    <input type="number" id="edad" name="edad" required min="1" max="1020"><br><br>
+
+    
+    <label for="altura":>altura</label><br>
+    <input type="number" id="altura" name="altura" required min="1" max="230"><br><br>
+    
+    <label for="mesdenacimiento">mesdenacimiento:</label><br>
+    <input type="number" id="mesdenacimiento" name="mesdenacimiento" required min="1" max="12"><br><br>
+    
+    <label for="dinero">dinero:</label><br>
+    <input type="number" id="dinero" name="dinero" required min="1" max="10000000000000000"><br><br>
+    
+    <label for="peso">peso:</label><br>
+    <input type="number" id="peso" name="peso" required min="1" max="200"><br><br>
+    
+    <label for="comidafav">comidafav:</label><br>
+    <input type="text" id="comidafav" name="comidafav" required><br><br>
+    
+    <button type="submit" id="btnEnviar">Enviar</button>
+  </form>
+
+  <p id="estado"></p>
+
+  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+
+  <script>
+    function enviado() {
+      document.getElementById('btnEnviar').disabled = true;
+      document.getElementById('estado').textContent = 'Guardando...';
+      
+      setTimeout(function() {
+        document.getElementById('estado').textContent = '¡Registro guardado con éxito!';
+        document.getElementById('formulario').reset();
+        document.getElementById('btnEnviar').disabled = false;
+      }, 1500);
+    }
+  </script>
+
+</body>
+</html>
